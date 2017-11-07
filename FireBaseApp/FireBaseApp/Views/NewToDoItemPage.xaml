@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FireBaseApp.Views.NewToDoItemPage">
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Name">
+                <EntryCell Label="Title" Text="{Binding NewToDoItem.Title}" />
+                <EntryCell Label="Description" Text="{Binding NewToDoItem.Description}" />
+            </TableSection>
+            <TableSection>
+                <ViewCell>
+                    <Button Text="Save" Command="{Binding CreateToDoItemCommand}" />
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

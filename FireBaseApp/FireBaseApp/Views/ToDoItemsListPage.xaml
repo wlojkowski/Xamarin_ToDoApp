@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FireBaseApp.Views.ToDoItemsListPage">
+    <StackLayout>
+        <Label Text="LIST"/>
+        <ListView ItemsSource="{Binding ToDoItemsObservableCollection}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}" Detail="{Binding Description}">
+                        <TextCell.ContextActions>
+                            <MenuItem 
+							Text="Delete" 
+							IsDestructive="true" 
+							Command="{Binding DeleteToDoItemCommand}"
+							CommandParameter="{Binding .}" />
+                        </TextCell.ContextActions>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Logout" Command="{Binding LogoutCommand}"/>
+    </StackLayout>
+</ContentPage>
